@@ -34,23 +34,22 @@
     <!-- Dashboard -->
     <section id="dashboard">
       <h2>Welcome, Student!</h2>
-      <div class="box" onclick="toggleList('requestedList')">
-  <h3>Requested Leaves</h3>
-  <ul id="requestedList" class="collapsible">
+      <div class="box">
+  <h3 onclick="toggleList(this)">Requested Leaves</h3>
+  <ul class="collapsible">
     <li>Leave for 02/09/2025</li>
     <li>Duty leave for seminar</li>
   </ul>
 </div>
 
-<div class="box" onclick="toggleList('approvedList')">
-  <h3>Approved Leaves</h3>
-  <ul id="approvedList" class="collapsible">
+<div class="box">
+  <h3 onclick="toggleList(this)">Approved Leaves</h3>
+  <ul class="collapsible">
     <li>Leave for 25/08/2025</li>
   </ul>
 </div>
 
-
-    <!-- About -->
+<!-- About -->
     <section id="about">
       <h2>About</h2>
       <p>This app digitalizes duty leave and attendance requests, reducing paperwork and making the process faster and more transparent.</p>

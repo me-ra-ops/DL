@@ -22,10 +22,19 @@ function showSection(id) {
   document.getElementById(id).classList.add("active");
 }
 
-function toggleList(id) {
-  const el = document.getElementById(id);
-  el.classList.toggle("show");
+function toggleList(header) {
+  const list = header.nextElementSibling; // the <ul> after <h3>
+
+  if (list.style.height && list.style.height !== "0px") {
+    // Slide up
+    list.style.height = "0px";
+  } else {
+    // Slide down to content height
+    list.style.height = list.scrollHeight + "px";
+  }
 }
+
+
 
 // Example requests
 let requested = ["Leave for 02/09/2025", "Duty leave for seminar"];

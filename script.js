@@ -1,19 +1,18 @@
-// Dummy login (replace with real later)
+// Login
 function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
 
   if (user === "student" && pass === "1234") {
-    alert("Login successful!");
     showSection("dashboard");
     document.getElementById("loginPage").style.display = "none";
+    renderLists(); // render after login
   } else {
     alert("Invalid credentials!");
   }
 }
 
 function logout() {
-  alert("Logged out!");
   location.reload();
 }
 
@@ -22,24 +21,11 @@ function showSection(id) {
   document.getElementById(id).classList.add("active");
 }
 
-function toggleList(header) {
-  const list = header.nextElementSibling; // the <ul> after <h3>
-
-  if (list.style.height && list.style.height !== "0px") {
-    // Slide up
-    list.style.height = "0px";
-  } else {
-    // Slide down to content height
-    list.style.height = list.scrollHeight + "px";
-  }
-}
-
-
-
 // Example requests
 let requested = ["Leave for 02/09/2025", "Duty leave for seminar"];
 let approved = ["Leave for 25/08/2025"];
 
+// Render lists dynamically
 function renderLists() {
   const reqList = document.getElementById("requestedList");
   const appList = document.getElementById("approvedList");
@@ -48,16 +34,31 @@ function renderLists() {
   appList.innerHTML = "";
 
   requested.forEach(item => {
-    let li = document.createElement("li");
+    const li = document.createElement("li");
     li.textContent = item;
     reqList.appendChild(li);
   });
 
   approved.forEach(item => {
-    let li = document.createElement("li");
+    const li = document.createElement("li");
     li.textContent = item;
     appList.appendChild(li);
   });
+
+  // Set initial height = 0 for all lists
+  document.querySelectorAll(".collapsible").forEach(ul => ul.style.height = "0px");
 }
 
-renderLists();
+// Slide toggle function
+function toggleList(header) {
+  const list = header.nextElementSibling;
+
+  // Get the real height of the content
+  const fullHeight = list.scrollHeight + "px";
+
+  if (list.style.height === "0px" || !list.style.height) {
+    list.style.height = fullHeight; // slide down
+  } else {
+    list.style.height = "0px"; // slide up
+  }
+}

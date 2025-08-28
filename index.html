@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duty Leave Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Duty Leave Management</h1>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <ul>
+      <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+      <li><a href="#" onclick="showSection('about')">About</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Login Page -->
+    <section id="loginPage" class="active">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Enter username">
+      <input type="password" id="password" placeholder="Enter password">
+      <button onclick="login()">Login</button>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h2>Welcome, Student!</h2>
+      <div class="box">
+        <h3>Requested Leaves</h3>
+        <ul id="requestedList"></ul>
+      </div>
+      <div class="box">
+        <h3>Approved Leaves</h3>
+        <ul id="approvedList"></ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <p>This app digitalizes duty leave and attendance requests, reducing paperwork and making the process faster and more transparent.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Your College Name</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

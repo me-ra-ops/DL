@@ -24,7 +24,7 @@ function showSection(id) {
 
 function toggleList(id) {
   const el = document.getElementById(id);
-  el.classList.toggle("hidden");
+  el.classList.toggle("show");
 }
 
 // Example requests

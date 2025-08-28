@@ -22,6 +22,11 @@ function showSection(id) {
   document.getElementById(id).classList.add("active");
 }
 
+function toggleList(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle("hidden");
+}
+
 // Example requests
 let requested = ["Leave for 02/09/2025", "Duty leave for seminar"];
 let approved = ["Leave for 25/08/2025"];

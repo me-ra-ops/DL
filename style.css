@@ -86,3 +86,7 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+.hidden {
+  display: none;
+}

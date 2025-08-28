@@ -34,14 +34,16 @@
     <!-- Dashboard -->
     <section id="dashboard">
       <h2>Welcome, Student!</h2>
-      <div class="box">
-        <h3>Requested Leaves</h3>
-        <ul id="requestedList"></ul>
-      </div>
-      <div class="box">
-        <h3>Approved Leaves</h3>
-        <ul id="approvedList"></ul>
-      </div>
+      <div class="box" onclick="toggleList('requestedList')">
+  <h3>Requested Leaves</h3>
+  <ul id="requestedList" class="hidden"></ul>
+</div>
+
+<div class="box" onclick="toggleList('approvedList')">
+  <h3>Approved Leaves</h3>
+  <ul id="approvedList" class="hidden"></ul>
+</div>
+
     </section>
 
     <!-- About -->

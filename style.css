@@ -51,13 +51,6 @@ header {
   font-weight: 500;
 }
 
-main {
-  margin-left: 220px;
-  margin-top: 80px;
-  padding: 20px;
-  flex-grow: 1;
-}
-
 /* Sections */
 section {
   display: none;
@@ -67,12 +60,17 @@ section.active {
   display: block;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0; /* remove sidebar offset */
+  margin-top: 80px;
+  padding: 20px;
+}
 .box {
-  background: #fffaf3;
-  border: 1px solid #e6dac7;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  width: 400px; /* fixed width */
+  text-align: center;
 }
 
 /* Footer */
